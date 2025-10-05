@@ -5,22 +5,75 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Zama Light Demo</title>
   <style>
-    body{font-family:Arial,Helvetica,sans-serif;padding:40px;background:#0b1220;color:#e6f0ff}
-    .card{max-width:700px;margin:0 auto}
-    button{padding:8px 12px;border-radius:6px;border:0;background:#22d3ee;color:#000;cursor:pointer}
+    /* Base styling */
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      padding: 40px;
+      background: radial-gradient(circle at top left, #0f172a 20%, #000 80%);
+      color: #e6f0ff;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #22d3ee, #a78bfa, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glowText 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 5px #22d3ee, 0 0 10px #a78bfa; }
+      to { text-shadow: 0 0 20px #a78bfa, 0 0 30px #22d3ee; }
+    }
+
+    #msg {
+      font-size: 1.1rem;
+      margin: 15px 0 25px;
+      color: #cdd9f2;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      background: linear-gradient(90deg, #22d3ee, #a78bfa);
+      color: #000;
+      cursor: pointer;
+      box-shadow: 0 0 12px #22d3ee;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #a78bfa;
+    }
+
+    p.note {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Zama Light Demo</h1>
-    <p id="msg">Hello from Zama Light Demo — click the button.</p>
-    <button id="btn">Change message</button>
-    <p style="margin-top:18px;font-size:14px;color:#96a3bf">Repo contains a tiny solidity example at <code>contracts/HelloZama.sol</code>.</p>
-  </div>
+  <h1>Zama Light Demo</h1>
+  <p id="msg">Hello from Zama Light Demo — click the button.</p>
+  <button id="btn">Change message</button>
+  <p class="note">Repo contains a tiny Solidity example at <code>contracts/HelloZama.sol</code>.</p>
 
   <script>
     document.getElementById('btn').addEventListener('click', function(){
-      document.getElementById('msg').textContent = 'Zama Season 3 — Demo by Mukesh4535';
+      document.getElementById('msg').textContent = 'Zama Season 3 — Demo by Mukesh4535 ✨';
     });
   </script>
 </body>
