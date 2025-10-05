@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zama Light Demo</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;padding:40px;background:#0b1220;color:#e6f0ff}
+    .card{max-width:700px;margin:0 auto}
+    button{padding:8px 12px;border-radius:6px;border:0;background:#22d3ee;color:#000;cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Zama Light Demo</h1>
+    <p id="msg">Hello from Zama Light Demo — click the button.</p>
+    <button id="btn">Change message</button>
+    <p style="margin-top:18px;font-size:14px;color:#96a3bf">Repo contains a tiny solidity example at <code>contracts/HelloZama.sol</code>.</p>
+  </div>
+
+  <script>
+    document.getElementById('btn').addEventListener('click', function(){
+      document.getElementById('msg').textContent = 'Zama Season 3 — Demo by Mukesh4535';
+    });
+  </script>
+</body>
+</html>
